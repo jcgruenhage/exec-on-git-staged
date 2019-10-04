@@ -7,7 +7,7 @@ git checkout-index -a -f --prefix="${WORK_TREE}/"
 cd ${WORK_TREE}
 input=`cat`
 sh -c "$input"
-CARGO_STATUS=$?
+COMMAND_STATUS=$?
 cd ${REPO_DIRECTORY}
 #rm -rf ${WORK_TREE}
-exit ${CARGO_STATUS}
+exit ${COMMAND_STATUS}
