@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# Fail if not in a git repo
+if ! `git rev-parse --is-inside-work-tree > /dev/null`
+then
+	exit 1
+fi
+
 # Remember path and setup temporary path
 REPO_DIRECTORY=`pwd`
 REPO_SLUG=`echo ${REPO_DIRECTORY} | sed --expression 's/\///'| sed --expression='s/\//-/g'`
